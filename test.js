@@ -6,18 +6,22 @@ function getComputerChoice() {
         "Scissors"
     ];
     let randomChoice = choice[Math.floor(Math.random() * choice.length)];
-    console.log(randomChoice);
+    return(randomChoice);
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound (playerSelection, computerSelection) {
 
-    if (playerSelection.toLowerCase == computerSelection.toLowerCase) {
+    let player = playerSelection.toLowerCase();
+    let computer = computerSelection.toLowerCase();
+    if (player == computer) {
         return("You tied, please try again")
-    } else if ((playerSelection.toLowerCase == "rock" && computerSelection.toLowerCase == "scissors") || (playerSelection.toLowerCase == "paper" && computerSelection.toLowerCase == "rock") || (playerSelection.toLowerCase == "scissors" && computerSelection.toLowerCase == "paper")) {
+    } else if ((player == "rock" && computer == "scissors") || (player == "paper" && computer == "rock") || (player == "scissors" && computer == "paper")) {
         return("You won!")
-    } else
-        return("You lost!")
+    } else {return "You lost!"
+    }
+
 }
+
 
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
