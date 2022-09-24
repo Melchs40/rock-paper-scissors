@@ -11,14 +11,14 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
 
-    if (computerSelection == "Rock") {
+    if (playerSelection.toLowerCase == computerSelection.toLowerCase) {
         return("You tied, please try again")
-    } else if (computerSelection == "Scissors") {
-        return("You won! Rock beats scissors!")
-    } else {
-        return("You lost! Paper beats rock!") }
+    } else if ((playerSelection.toLowerCase == "rock" && computerSelection.toLowerCase == "scissors") || (playerSelection.toLowerCase == "paper" && computerSelection.toLowerCase == "rock") || (playerSelection.toLowerCase == "scissors" && computerSelection.toLowerCase == "paper")) {
+        return("You won!")
+    } else
+        return("You lost!")
 }
 
-const playerSelection = "Rock".toLowerCase();
+const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
