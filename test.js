@@ -9,45 +9,39 @@ function getComputerChoice() {
     return(randomChoice);
 }
 
-function playRound (playerSelection, b = computerSelection) {
+let playerScore = 0;
+let computerScore = 0;
 
+function playRound (playerSelection, b = computerSelection) {
+    
     let player = playerSelection.toLowerCase();
     let computer = computerSelection.toLowerCase();
     if (player == computer) {
-        let roundResult = ("You tied, please try again.")
+        let roundResult = (`You tied, please try again. The score is still ${playerScore} to ${computerScore}`)
         return roundResult;
     } else if ((player == "rock" && computer == "scissors") || (player == "paper" && computer == "rock") || (player == "scissors" && computer == "paper")) {
-        let roundResult = (`You won!!! ${player.charAt(0).toUpperCase() + player.slice(1)} beats ${computer}!`)
+        playerScore++;
+        let roundResult = (`You won!!! ${player.charAt(0).toUpperCase() + player.slice(1)} beats ${computer}! The score now is ${playerScore} to ${computerScore}`)
         return roundResult;
     } else {
-        let roundResult = `You lost! ${computer.charAt(0).toUpperCase() + computer.slice(1)} beats ${player}...`;
+        computerScore++;
+        let roundResult = `You lost! ${computer.charAt(0).toUpperCase() + computer.slice(1)} beats ${player}... The score is now ${playerScore} to ${computerScore}`;
         return roundResult;
     }
 
+
 }
-
-
 const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+let computerSelection = getComputerChoice();
+let badResult = "Invalid value, Please enter Rock, Paper, or Scissors";
 
-function game (playerSelection, b = computerSelection) {
-
+function game () {
     for (let i = 0; i < 5; i++) {
-
-        playRound(playerSelection, b = computerSelection)
-            if (roundResult.includes("won")) {
-                let playerScore = 0; playerScore < 5, playerScore++;
-                let roundMessage = `You won a round! The score now is ${playerScore} to ${computerScore}`;
-                return roundMessage;
-            } else if (roundResult.includes("lost")) {
-                let computerScore = 0; computerScore < 5, computerScore++;
-                let roundMessage = `You lost a round! The score now is ${playerScore} to ${computerScore}`;
-                return roundMessage;
-            } else {
-                let roundMessage = `You tied, the score is still ${playerScore} to ${computerScore}`;
-                return roundMessage;
-            }
-        }
-
+        let playerResponse = prompt("Please choose: Rock, Paper, or Scissors")
+        if (playerResponse.toLowerCase() === "rock" || playerResponse.toLowerCase() === "paper" || playerResponse.toLowerCase() === "scissors") {
+            i++;
+            console.log(playRound(playerResponse, b = computerSelection));
+            return game();
+        } else { return badResult; }
+    }
 }
