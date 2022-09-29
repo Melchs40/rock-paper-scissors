@@ -39,6 +39,7 @@ function game () {
     for (let i = 0; i < 5; i++) {
         let playerResponse = prompt("Please choose: Rock, Paper, or Scissors")
         if (playerResponse.toLowerCase() === "rock" || playerResponse.toLowerCase() === "paper" || playerResponse.toLowerCase() === "scissors") {
+            i++;
             console.log(playRound(playerResponse, b = computerSelection));
             return game();
         } else { 
