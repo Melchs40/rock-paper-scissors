@@ -36,14 +36,14 @@ let computerSelection = getComputerChoice();
 let badResult = "Invalid value, Please enter Rock, Paper, or Scissors";
 
 function game () {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i+0) {
         let playerResponse = prompt("Please choose: Rock, Paper, or Scissors")
         if (playerResponse.toLowerCase() === "rock" || playerResponse.toLowerCase() === "paper" || playerResponse.toLowerCase() === "scissors") {
-            i++;
+            
             console.log(playRound(playerResponse, b = computerSelection));
-            return game();
+            i++;
         } else { 
             console.log(badResult); 
-            return game(); }
+             }
     }
 }
