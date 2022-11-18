@@ -29,7 +29,7 @@ function playRound () {
         if (computerScore === 5) {
             let roundResult = (`${computer.charAt(0).toUpperCase() + computer.slice(1)} beats ${player}. You have lost the game... The final score is ${computerScore} to ${playerScore}`);
             result.textContent = roundResult;
-            buttons.style.display = "none";
+            this.parentNode.removeChild;
         } else {
             let roundResult = (`You lost this round! ${computer.charAt(0).toUpperCase() + computer.slice(1)} beats ${player}... The score is now ${playerScore} to ${computerScore}`);
             result.textContent = roundResult;
@@ -38,7 +38,7 @@ function playRound () {
         if (playerScore === 5) {
             let roundResult = (`${player.charAt(0).toUpperCase() + player.slice(1)} beats ${computer}. You have won the game!!! The final score is ${playerScore} to ${computerScore}`);
             result.textContent = roundResult;
-            buttons.style.display = "none";
+            this.parentNode.removeChild;
         } else {
             let roundResult = (`You won!!! ${player.charAt(0).toUpperCase() + player.slice(1)} beats ${computer}! The score now is ${playerScore} to ${computerScore}`);
             result.textContent = roundResult;
