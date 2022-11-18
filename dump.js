@@ -1,3 +1,5 @@
+// Prior rock, paper, scissors functions.
+
 function game () {
     for (let i = 0; i < 5; i+0) {
         let playerResponse = prompt("Please choose: Rock, Paper, or Scissors");
