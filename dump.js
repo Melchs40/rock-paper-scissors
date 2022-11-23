@@ -1,4 +1,4 @@
-// Prior rock, paper, scissors functions.
+// Prior rock, paper, scissors functions used in first iteration of project
 
 function game () {
     for (let i = 0; i < 5; i+0) {
