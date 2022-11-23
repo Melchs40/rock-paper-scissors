@@ -29,8 +29,8 @@ function playRound () {
         if (computerScore === 5) {
             let roundResult = (`${computer.charAt(0).toUpperCase() + computer.slice(1)} beats ${player}. You have lost the game... The final score is ${computerScore} to ${playerScore}`);
             result.textContent = roundResult;
-            var buttonList = document.getElementsByClassName('container');
-            for (var i=0;i<buttonList.length;i++){
+            let buttonList = document.getElementsByClassName('container');
+            for (let i=0;i<buttonList.length;i++){
                 buttonList[i].style.display = 'none';
             }
         } else {
@@ -42,8 +42,8 @@ function playRound () {
             let roundResult = (`${player.charAt(0).toUpperCase() + player.slice(1)} beats ${computer}. You have won the game!!! The final score is ${playerScore} to ${computerScore}`);
             result.textContent = roundResult;
             this.parentNode.removeChild;
-            var buttonList = document.getElementsByClassName('container');
-            for (var i=0;i<buttonList.length;i++){
+            let buttonList = document.getElementsByClassName('container');
+            for (let i=0;i<buttonList.length;i++){
                 buttonList[i].style.display = 'none';
             }     
         } else {
